@@ -30,7 +30,7 @@ if ($_POST) {
         $class = "success";
         $message = "The entry below was successfully created <br>
             <table class='table w-50'><tr>
-            <td> $name </td>
+            <td> $animal_name </td>
             <td> $age </td>
             <td> $breed </td>
 
