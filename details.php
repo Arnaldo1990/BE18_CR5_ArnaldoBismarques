@@ -29,7 +29,6 @@ $row = mysqli_fetch_assoc($result);
 </head>
 
 <body>
- <div>
 
  <div class="card" style="width: 18rem;">
   <img src="pictures/<?= $row['description'] ?>" class="card-img-top" alt="<?= $row["animal_name"] ?>">
@@ -38,21 +37,14 @@ $row = mysqli_fetch_assoc($result);
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">An item</li>
-    <li class="list-group-item">A second item</li>
-    <li class="list-group-item">A third item</li>
+    <li class="list-group-item"><?= $row['age']?> years</li>
+    <li class="list-group-item"><?= $row["breed"] ?></li>
+    <li class="list-group-item">Vaccine: <?= $row["vaccine"] ?></li>
   </ul>
   <div class="card-body">
     <a href="#" class="card-link">Card link</a>
     <a href="#" class="card-link">Another link</a>
   </div>
-</div>
-    <p>ID: <?= $row['animalId']?></p>
-    <p><img src="pictures/<?= $row['description'] ?>"width="200"></p>
-    <p>Name: <?= $row["animal_name"] ?></p>
-    <p>Age: <?= $row["age"] ?></p>
-    <p>Vaccine: <?= $row["vaccine"] ?></p>
-</div>
 </body>
 
 </html>
