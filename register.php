@@ -159,7 +159,7 @@ mysqli_close($connect);
             </div>
             <button type="submit" class="btn btn-block btn-success" name="btn-signup">Sign Up</button>
             <hr />
-            <a href='index.php'><button class="badge bg-white text-wrap" style="width: 6rem;" type='button'>New? Sign in Here!</a>
+            <a href='index.php'><button class="animate__animated animate__wobble animate__delay-1s text-center badge bg-white text-wrap" style="width: 6rem;" type='button'>New? Sign in Here!</a>
         </form>
     </div>
 </body>
