@@ -20,9 +20,9 @@ if ($_POST) {
     $breed = $_POST['breed'];
     $size = $_POST['size'];
     $uploadError = '';
-    $picture = file_upload($_FILES['picture'], "product");
+    $picture = file_upload($_FILES['picture'], "animals");
 
-    $sql = "INSERT INTO `animals`(name, age, breed, size, picture, ) VALUES 
+    $sql = "INSERT INTO `animals`(name, age, breed, size, picture ) VALUES 
     ('$name', $age, '$breed', '$size', '$picture->fileName')";
 
 
@@ -31,7 +31,8 @@ if ($_POST) {
         $message = "The entry below was successfully created <br>
             <table class='table w-50'><tr>
             <td> $name </td>
-            <td> $price </td>
+            <td> $age </td>
+            <td> $breed </td>
             </tr></table><hr>";
         $uploadError = ($picture->error != 0) ? $picture->ErrorMessage : '';
     } else {
