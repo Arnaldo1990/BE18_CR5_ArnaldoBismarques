@@ -151,12 +151,13 @@ mysqli_close($connect);
             <span class="text-danger"> <?php echo $emailError; ?> </span>
             <div class="d-flex">
 
+            <input type="password" name="pass" class="form-control" placeholder="Choose a Password" maxlength="15" />
+            <span class="text-danger"> <?php echo $passError; ?> </span>
+            <hr />
+
                 <input class='form-control w-50' type="file" name="picture">
                 <span class="text-danger"> <?php echo $picError; ?> </span>
             </div>
-            <input type="password" name="pass" class="form-control" placeholder="Enter Password" maxlength="15" />
-            <span class="text-danger"> <?php echo $passError; ?> </span>
-            <hr />
             <button type="submit" class="btn btn-block btn-primary btn-lg" name="btn-signup">Sign Up</button>
             <hr />
             <a href="index.php">New? Sign in Here!</a>
