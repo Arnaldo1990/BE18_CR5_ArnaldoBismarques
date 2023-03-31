@@ -15,15 +15,15 @@
 
 
 if ($_POST) {
-    $name = $_POST['name'];
+    $animal_name = $_POST['animal_name'];
     $age = $_POST['age'];
     $breed = $_POST['breed'];
     $size = $_POST['size'];
     $uploadError = '';
-    $picture = file_upload($_FILES['picture'], "animals");
+    $picture = file_upload($_FILES['picture'], "animal");
 
-    $sql = "INSERT INTO `animals`(name, age, breed, size, picture ) VALUES 
-    ('$name', $age, '$breed', '$size', '$picture->fileName')";
+    $sql = "INSERT INTO `animals`(animal_name, age, breed, size) VALUES 
+    ('$animal_name', $age, '$breed', '$size', '$picture->fileName')";
 
 
     if (mysqli_query($connect, $sql) === true) {
@@ -33,6 +33,7 @@ if ($_POST) {
             <td> $name </td>
             <td> $age </td>
             <td> $breed </td>
+
             </tr></table><hr>";
         $uploadError = ($picture->error != 0) ? $picture->ErrorMessage : '';
     } else {
