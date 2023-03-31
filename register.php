@@ -11,8 +11,8 @@ if (isset($_SESSION['adm']) != "") {
     header("Location: dashboard.php"); 
 }
 $error = false;
-$fname = $lname = $phone = $email = $pass = $picture = '';
-$fnameError = $lnameError = $phoneError = $emailError = $passError = $picError = '';
+$fname = $lname = $phone = $email = $pass = $address = $picture = '';
+$fnameError = $lnameError = $phoneError = $emailError = $passError = $addressError = $picError = '';
 if (isset($_POST['btn-signup'])) {
 
     // sanitise user input to prevent sql injection
@@ -36,6 +36,10 @@ if (isset($_POST['btn-signup'])) {
     $pass = trim($_POST['pass']);
     $pass = strip_tags($pass);
     $pass = htmlspecialchars($pass);
+
+    $address = trim($_POST['address']);
+    $address = strip_tags($address);
+    $address = htmlspecialchars($address);
 
     $uploadError = '';
     $picture = file_upload($_FILES['picture']);
@@ -79,14 +83,18 @@ if (isset($_POST['btn-signup'])) {
         $error = true;
         $passError = "Password must have at least 6 characters.";
     }
+    if(empty($address)) {
+        $error = true;
+        $addressError = "Please enter your address.";
+    }
 
     // password hashing for security
     $password = hash('sha256', $pass);
     // if there's no error, continue to signup
     if (!$error) {
 
-        $query = "INSERT INTO users(first_name, last_name, phone_number, email, password, picture)
-                  VALUES('$fname', '$lname', '$phone', '$email','$password', '$picture->fileName')";
+        $query = "INSERT INTO users(first_name, last_name, phone_number, email, password, address, picture)
+                  VALUES('$fname', '$lname', '$phone', '$email','$password', '$address', '$picture->fileName')";
         $res = mysqli_query($connect, $query);
 
         if ($res) {
@@ -144,14 +152,15 @@ mysqli_close($connect);
             <input type="number" name="phone" class="form-control" placeholder="+436.." maxlength="50" value="<?php echo $phone ?>" />
             <span class="text-danger"> <?php echo $phoneError; ?> </span>
 
-
-
             <input type="email" name="email" class="form-control" placeholder="Enter Your Email" maxlength="40" value="<?php echo $email ?>" />
             <span class="text-danger"> <?php echo $emailError; ?> </span>
             <div class="d-flex">
 
             <input type="password" name="pass" class="form-control" placeholder="Choose a Password" maxlength="15" />
             <span class="text-danger"> <?php echo $passError; ?> </span>
+
+            <input type="text" name="address" class="form-control" placeholder="address" maxlength="50" value="<?php echo $lname ?>" />
+            <span class="text-danger"> <?php echo $lnameError; ?> </span>
             <hr />
 
                 <input class='form-control w-50' type="file" name="picture">
