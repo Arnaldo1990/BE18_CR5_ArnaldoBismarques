@@ -22,8 +22,9 @@ if ($result->num_rows > 0) {
         $tbody .= "<tr>
             <td><img class='img-thumbnail rounded-circle' src='pictures/" . $row['picture'] . "' alt=" . $row['first_name'] . "></td>
             <td>" . $row['first_name'] . " " . $row['last_name'] . "</td>
-            <td>" . $row['date_of_birth'] . "</td>
+            <td>" . $row['phone_number'] . "</td>
             <td>" . $row['email'] . "</td>
+            <td>" . $row['address'] . "</td>
             <td><a href='update.php?id=" . $row['id'] . "'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
             <a href='delete.php?id=" . $row['id'] . "'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
          </tr>";
@@ -69,7 +70,7 @@ mysqli_close($connect);
     <div class="container">
         <div class="row">
             <div class="col-2">
-                <img class="userImage" src="pictures/admavatar.png" alt="Adm avatar">
+                <img class="userImage" src="../pictures/avatar.png" alt="Adm avatar">
                 <p class="">Administrator</p>
                 <a class="btn btn-success" href="products/index.php">Products</a>
                 <a class="btn btn-danger" href="logout.php?logout">Sign Out</a>
@@ -78,12 +79,13 @@ mysqli_close($connect);
                 <p class='h2'>Users</p>
 
                 <table class='table table-striped'>
-                    <thead class='table-success'>
+                    <thead class='table-dark'>
                         <tr>
                             <th>Picture</th>
                             <th>Name</th>
-                            <th>Adresse</th>
+                            <th>Phonenumber</th>
                             <th>Email</th>
+                            <th>Address</th>
                             <th>Action</th>
                         </tr>
                     </thead>
