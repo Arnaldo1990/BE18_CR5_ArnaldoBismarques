@@ -70,7 +70,7 @@ if (isset($_POST['btn-signup'])) {
             $emailError = "Provided Email is already in use.";
         }
     }
-
+// Phone number validation
     if (empty($phone)) {
         $error = true;
         $phoneError = "Please enter your phone number.";
