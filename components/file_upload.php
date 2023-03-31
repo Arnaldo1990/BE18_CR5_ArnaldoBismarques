@@ -1,12 +1,13 @@
 <?php
 function file_upload($picture, $src = "user")
 {
-    $result = new stdClass();
+    $result = new stdClass(); //this object will carry status from file upload
     $result->fileName = 'avatar.png';
-    if($src == "animals"){
+    if($src == "animal"){
         $result->fileName = 'animal.jpg';
     }
-    $result->error = 1; 
+    $result->error = 1; //it could also be a boolean true/false
+    //collect data from object $picture
     $fileName = $picture["name"];
     $fileType = $picture["type"];
     $fileTmpName = $picture["tmp_name"];
@@ -19,11 +20,11 @@ function file_upload($picture, $src = "user")
         return $result;
     }else {
         if (in_array($fileExtension, $filesAllowed)) {
-            if ($fileError === 0) {
+            if ($fileError == 0) {
                 if ($fileSize < 500000) { 
-                    $fileNewName = uniqid('') . "." . $fileExtension; 
+                    $fileNewName = uniqid('') . "." . $fileExtension; // 1233343434.jpg i.e
                     $destination = "pictures/$fileNewName";
-                    if ($src == 'animals') {
+                    if ($src == 'animal') {
                         $destination = "../pictures/$fileNewName";
                         }
                     if (move_uploaded_file($fileTmpName, $destination)) {
