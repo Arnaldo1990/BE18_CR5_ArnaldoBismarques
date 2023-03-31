@@ -1,3 +1,5 @@
+/* home.php */
+
 .userImage {
     width: 200px;
     height: 200px;
@@ -6,4 +8,25 @@
 .hero {
     background: rgb(103, 189, 5);
     background: linear-gradient(24deg, rgb(11, 0, 211) 0%, rgb(5, 72, 85) 100%);
+}
+
+
+/* index.php (animals) */
+
+.manageProduct {
+    margin: auto;
+}
+
+.img-thumbnail {
+    width: 70px !important;
+    height: 70px !important;
+}
+
+td {
+    text-align: left;
+    vertical-align: middle;
+}
+
+tr {
+    text-align: center;
 }
