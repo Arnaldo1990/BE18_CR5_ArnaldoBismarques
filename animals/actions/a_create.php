@@ -15,7 +15,7 @@
 
 
 if ($_POST) {
-    $animal_name = $_POST['animal_name'];
+    $name = $_POST['name'];
     $age = $_POST['age'];
     $breed = $_POST['breed'];
     $size = $_POST['size'];
@@ -23,14 +23,14 @@ if ($_POST) {
     $picture = file_upload($_FILES['picture'], "animal");
 
     $sql = "INSERT INTO `animals`(animal_name, age, breed, size) VALUES 
-    ('$animal_name', $age, '$breed', '$size', '$picture->fileName')";
+    ('$name', $age, '$breed', '$size', '$picture->fileName')";
 
 
     if (mysqli_query($connect, $sql) === true) {
         $class = "success";
         $message = "The entry below was successfully created <br>
             <table class='table w-50'><tr>
-            <td> $animal_name </td>
+            <td> $name </td>
             <td> $age </td>
             <td> $breed </td>
 
