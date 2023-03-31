@@ -2,6 +2,8 @@
 
 session_start();
 
-echo $_SESSION["user"];
 
+
+
+require_once "components/db_connect.php";
 ?>
