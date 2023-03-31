@@ -45,29 +45,20 @@ mysqli_close($connect);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome - <?php echo $row['first_name']; ?></title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Welcome, <?php echo $row['first_name']; ?></title>
     <?php require_once 'components/boot.php' ?>
-    <style>
-        .userImage {
-            width: 200px;
-            height: 200px;
-        }
-
-        .hero {
-            background: rgb(2, 0, 36);
-            background: linear-gradient(24deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
-        }
-    </style>
 </head>
 
 <body>
     <div class="container">
         <div class="hero">
             <img class="userImage" src="pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['first_name']; ?>">
-            <p class="text-white">Hi <?php echo $row['first_name']; ?></p>
+            <p class="text-warning">Welcome, <?php echo $row['first_name']; ?>!</p>
+            <p class="text-warning"> Username: <?php echo $row['email']; ?></p>
         </div>
-        <a class="btn btn-outline-danger" href="logout.php?logout">Sign Out</a>
-        <a class="btn btn-outline-warning" href="update.php?id=<?php echo $_SESSION['user'] ?>">Update your profile</a>
+        <a class="btn btn-danger position-absolute top-0 end-0" href="logout.php?logout">Sign Out</a>
+        <!-- <a class="btn btn-outline-warning" href="update.php?id=<?php echo $_SESSION['user'] ?>">Update your profile</a> -->
 
         <div class="manageProduct w-75 mt-3">
         <div class='mb-3'>
