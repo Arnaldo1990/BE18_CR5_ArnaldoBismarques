@@ -49,8 +49,8 @@
                     <td><input class='form-control' type="number" name="age" placeholder="Enter the age of the pet" step="any" /></td>
                 </tr>
                 <tr>
-                    <th>Picture</th>
-                    <td><input class='form-control' type="file" name="picture" /></td>
+                    <th>Description</th>
+                    <td><input class='form-control' type="file" name="description" /></td>
                 </tr>
                 <tr>
                     <th>Breed</th>

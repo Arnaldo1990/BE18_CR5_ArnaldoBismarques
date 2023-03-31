@@ -20,10 +20,10 @@ if ($_POST) {
     $breed = $_POST['breed'];
     $size = $_POST['size'];
     $uploadError = '';
-    $picture = file_upload($_FILES['picture'], "animal");
+    $description = file_upload($_FILES['description'], "animal");
 
-    $sql = "INSERT INTO `animals`(animal_name, age, breed, size) VALUES 
-    ('$name', $age, '$breed', '$size', '$picture->fileName')";
+    $sql = "INSERT INTO `animals`(animal_name, age, breed, size, description) VALUES 
+    ('$name', $age, '$breed', '$size', '$description->fileName')";
 
 
     if (mysqli_query($connect, $sql) === true) {
@@ -35,11 +35,11 @@ if ($_POST) {
             <td> $breed </td>
 
             </tr></table><hr>";
-        $uploadError = ($picture->error != 0) ? $picture->ErrorMessage : '';
+        $uploadError = ($description->error != 0) ? $description->ErrorMessage : '';
     } else {
         $class = "danger";
         $message = "Error while creating file. Please try again! <br>" . $connect->error;
-        $uploadError = ($picture->error != 0) ? $picture->ErrorMessage : '';
+        $uploadError = ($description->error != 0) ? $description->ErrorMessage : '';
     }
     mysqli_close($connect);
 } else {
