@@ -121,7 +121,7 @@ mysqli_close($connect);
 
 <body>
     <div class="container">
-        <form class="w-75" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off" enctype="multipart/form-data">
+        <form class="w-75" method="post" action="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>" autocomplete="off" enctype="multipart/form-data">
             <h2>Sign Up.</h2>
             <hr />
             <?php
@@ -154,7 +154,7 @@ mysqli_close($connect);
             <input type="password" name="pass" class="form-control" placeholder="Enter Password" maxlength="15" />
             <span class="text-danger"> <?php echo $passError; ?> </span>
             <hr />
-            <button type="submit" class="btn btn-block btn-primary" name="btn-signup">Sign Up</button>
+            <button type="submit" class="btn btn-block btn-primary btn-lg" name="btn-signup">Sign Up</button>
             <hr />
             <a href="index.php">New? Sign in Here!</a>
         </form>
