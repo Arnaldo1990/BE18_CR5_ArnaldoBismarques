@@ -3,40 +3,35 @@
 require_once 'components/db_connect.php';
 require_once 'components/file_upload.php';
 
-session_start(); // start a new session or continues the previous
+session_start(); 
 if (isset($_SESSION['user']) != "") {
-    header("Location: home.php"); // redirects to home.php
+    header("Location: home.php"); 
 }
 if (isset($_SESSION['adm']) != "") {
-    header("Location: dashboard.php"); // redirects to home.php
+    header("Location: dashboard.php"); 
 }
 $error = false;
-$fname = $lname = $email = $date_of_birth = $pass = $picture = '';
-$fnameError = $lnameError = $emailError = $dateError = $passError = $picError = '';
+$fname = $lname = $phone = $email = $pass = $picture = '';
+$fnameError = $lnameError = $phoneError = $emailError = $passError = $picError = '';
 if (isset($_POST['btn-signup'])) {
 
     // sanitise user input to prevent sql injection
     // trim - strips whitespace (or other characters) from the beginning and end of a string
     $fname = trim($_POST['fname']);
-
-
-    // strip_tags -- strips HTML and PHP tags from a string
     $fname = strip_tags($fname);
-
-    // htmlspecialchars converts special characters to HTML entities
     $fname = htmlspecialchars($fname);
 
     $lname = trim($_POST['lname']);
     $lname = strip_tags($lname);
     $lname = htmlspecialchars($lname);
 
+    $phone = trim($_POST['phone']);
+    $phone = strip_tags($phone);
+    $phone = htmlspecialchars($phone);
+
     $email = trim($_POST['email']);
     $email = strip_tags($email);
     $email = htmlspecialchars($email);
-
-    $date_of_birth = trim($_POST['date_of_birth']);
-    $date_of_birth = strip_tags($date_of_birth);
-    $date_of_birth = htmlspecialchars($date_of_birth);
 
     $pass = trim($_POST['pass']);
     $pass = strip_tags($pass);
@@ -48,7 +43,7 @@ if (isset($_POST['btn-signup'])) {
     // basic name validation
     if (empty($fname) || empty($lname)) {
         $error = true;
-        $fnameError = "Please enter your full name and surname";
+        $fnameError = "Please enter your full name.";
     } else if (strlen($fname) < 3 || strlen($lname) < 3) {
         $error = true;
         $fnameError = "Name and surname must have at least 3 characters.";
@@ -71,10 +66,10 @@ if (isset($_POST['btn-signup'])) {
             $emailError = "Provided Email is already in use.";
         }
     }
-    // checks if the date input was left empty
-    if (empty($date_of_birth)) {
+
+    if (empty($phone)) {
         $error = true;
-        $dateError = "Please enter your date of birth.";
+        $phoneError = "Please enter your phone number.";
     }
     // password validation
     if (empty($pass)) {
@@ -90,8 +85,8 @@ if (isset($_POST['btn-signup'])) {
     // if there's no error, continue to signup
     if (!$error) {
 
-        $query = "INSERT INTO users(first_name, last_name, password, date_of_birth, email, picture)
-                  VALUES('$fname', '$lname', '$password', '$date_of_birth', '$email', '$picture->fileName')";
+        $query = "INSERT INTO users(first_name, last_name, phone, email, password, picture)
+                  VALUES('$fname', '$lname', '$phone', '$email','$password', '$picture->fileName')";
         $res = mysqli_query($connect, $query);
 
         if ($res) {
@@ -122,7 +117,7 @@ mysqli_close($connect);
 <body>
     <div class="container">
         <form class="w-75" method="post" action="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>" autocomplete="off" enctype="multipart/form-data">
-            <h2>Sign Up.</h2>
+            <h2 class="text-center">Registration form</h2>
             <hr />
             <?php
             if (isset($errMSG)) {
@@ -140,10 +135,10 @@ mysqli_close($connect);
             <span class="text-danger"> <?php echo $fnameError; ?> </span>
 
             <input type="text" name="lname" class="form-control" placeholder="Last name" maxlength="50" value="<?php echo $lname ?>" />
-            <span class="text-danger"> <?php echo $fnameError; ?> </span>
+            <span class="text-danger"> <?php echo $lnameError; ?> </span>
 
-            <input type="number" name="phonenumber" class="form-control" placeholder="+436.." maxlength="50" value="<?php echo $phonenumber ?>" />
-            <span class="text-danger"> <?php echo $fnameError; ?> </span>
+            <input type="number" name="phone" class="form-control" placeholder="+436.." maxlength="50" value="<?php echo $phone ?>" />
+            <span class="text-danger"> <?php echo $phoneError; ?> </span>
 
 
 
