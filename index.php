@@ -2,13 +2,12 @@
 session_start();
 require_once 'components/db_connect.php';
 
-// it will never let you open index (login) page if session is set
 if (isset($_SESSION['user']) != "") {
     header("Location: home.php");
     exit;
 }
 if (isset($_SESSION['adm']) != "") {
-    header("Location: dashboard.php"); // redirects to home.php
+    header("Location: dashboard.php");
 }
 
 $error = false;
@@ -16,7 +15,6 @@ $email = $password = $emailError = $passError = '';
 
 if (isset($_POST['btn-login'])) {
 
-    // prevent sql injections/ clear user invalid inputs
     $email = trim($_POST['email']);
     $email = strip_tags($email);
     $email = htmlspecialchars($email);
@@ -71,13 +69,19 @@ mysqli_close($connect);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login & Registration System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <?php require_once 'components/boot.php' ?>
 </head>
 
 <body>
+    <nav>
+        <i class="bi bi-house-heart"></i>
+
+    </nav>
 
 <div class="class">
-
+    <h1 class="text-center">Animal Planet</h1>
 
 </div>
     <div class="container">
@@ -101,5 +105,8 @@ mysqli_close($connect);
             <a href="register.php">Not registered yet? Click here</a>
         </form>
     </div>
+    <script
+        type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
+></script>
 </body>
 </html>
