@@ -16,15 +16,15 @@ $email = 'email';
 
 $sql = "SELECT id, first_name, password, status FROM users WHERE email = '$email'";
 $result = mysqli_query($connect, $sql);
-$tbody = ''; //this variable will hold the body for the table
+$tbody = ''; 
 if (mysqli_num_rows($result)  > 0) {
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         $tbody .= "<tr>
             <td><img class='img-thumbnail' src='../pictures/" . $row['picture'] . "'</td>
             <td>" . $row['name'] . "</td>
-            <td>" . $row['price'] . "</td>
-            <td>" . $row['sup_name'] . "</td>
-            <td><a href='update.php?id=" . $row['id'] . "'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
+            <td>" . $row['age'] . "</td>
+            <td>" . $row['size'] . "</td>
+            <td>" . $row['breed'] . "</td>
             <a href='delete.php?id=" . $row['id'] . "'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
             </tr>";
     };
