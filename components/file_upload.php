@@ -23,7 +23,7 @@ function file_upload($picture, $src = "user")
                 if ($fileSize < 500000) { 
                     $fileNewName = uniqid('') . "." . $fileExtension; 
                     $destination = "pictures/$fileNewName";
-                    if ($src == 'product') {
+                    if ($src == 'animals') {
                         $destination = "../pictures/$fileNewName";
                         }
                     if (move_uploaded_file($fileTmpName, $destination)) {
