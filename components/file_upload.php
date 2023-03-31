@@ -1,13 +1,12 @@
 <?php
 function file_upload($picture, $src = "user")
 {
-    $result = new stdClass(); //this object will carry status from file upload
+    $result = new stdClass();
     $result->fileName = 'avatar.png';
-    if($src == "product"){
-        $result->fileName = 'product.png';
+    if($src == "animals"){
+        $result->fileName = 'animal.png';
     }
-    $result->error = 1; //it could also be a boolean true/false
-    //collect data from object $picture
+    $result->error = 1; 
     $fileName = $picture["name"];
     $fileType = $picture["type"];
     $fileTmpName = $picture["tmp_name"];
@@ -22,7 +21,7 @@ function file_upload($picture, $src = "user")
         if (in_array($fileExtension, $filesAllowed)) {
             if ($fileError === 0) {
                 if ($fileSize < 500000) { 
-                    $fileNewName = uniqid('') . "." . $fileExtension; // 1233343434.jpg i.e
+                    $fileNewName = uniqid('') . "." . $fileExtension; 
                     $destination = "pictures/$fileNewName";
                     if ($src == 'product') {
                         $destination = "../pictures/$fileNewName";
