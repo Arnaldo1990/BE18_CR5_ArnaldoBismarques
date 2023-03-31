@@ -4,7 +4,7 @@ function file_upload($picture, $src = "user")
     $result = new stdClass();
     $result->fileName = 'avatar.png';
     if($src == "animals"){
-        $result->fileName = 'animal.png';
+        $result->fileName = 'animal.jpg';
     }
     $result->error = 1; 
     $fileName = $picture["name"];
