@@ -52,7 +52,7 @@ mysqli_close($connect);
 <body>
     <div class="manageProduct w-75 mt-3">
         <div class='mb-3'>
-            <a href="create.php"><button class='btn btn-outline-primary' type="button">Add product</button></a>
+            <a href="create.php"><button class='btn btn-outline-primary' type="button">Add a Pet</button></a>
             <a href="../index.php"><button class='btn btn-outline-warning' type="button">Dashboard</button></a>
         </div>
         <p class='h2'>Animals</p>
