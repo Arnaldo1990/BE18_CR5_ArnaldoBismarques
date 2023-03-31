@@ -57,10 +57,17 @@
                     <td><input class='form-control' type="text" name="breed" step="any" /></td>
                 </tr>
                 <tr>
+                    <th>Vaccine</th>
+                    <td><input class='form-control' type="text" name="vaccine" step="any" /></td>
+                </tr>
+                <tr>
                     <th>Size</th>
                     <td><input class='form-control' type="text" name="size" step="any" /></td>
                 </tr>
-
+                <tr>
+                    <th>Address</th>
+                    <td><input class='form-control' type="text" name="address" step="any" /></td>
+                </tr>
                 <tr>
                     <td><button class='btn btn-success' type="submit">Insert Animal</button></td>
                     <td><a href="index.php"><button class='btn btn-warning' type="button">Go back to Home</button></a></td>
