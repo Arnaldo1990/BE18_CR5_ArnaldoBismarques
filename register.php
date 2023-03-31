@@ -142,11 +142,14 @@ mysqli_close($connect);
             <input type="text" name="lname" class="form-control" placeholder="Last name" maxlength="50" value="<?php echo $lname ?>" />
             <span class="text-danger"> <?php echo $fnameError; ?> </span>
 
+            <input type="number" name="phonenumber" class="form-control" placeholder="+436.." maxlength="50" value="<?php echo $phonenumber ?>" />
+            <span class="text-danger"> <?php echo $fnameError; ?> </span>
+
+
+
             <input type="email" name="email" class="form-control" placeholder="Enter Your Email" maxlength="40" value="<?php echo $email ?>" />
             <span class="text-danger"> <?php echo $emailError; ?> </span>
             <div class="d-flex">
-                <input class='form-control w-50' type="date" name="date_of_birth" value="<?php echo $date_of_birth ?>" />
-                <span class="text-danger"> <?php echo $dateError; ?> </span>
 
                 <input class='form-control w-50' type="file" name="picture">
                 <span class="text-danger"> <?php echo $picError; ?> </span>
