@@ -25,8 +25,9 @@ if (mysqli_num_rows($result)  > 0) {
         $tbody .= "<tr>
             <td><img class='img-thumbnail' src='pictures/" . $data['picture'] . "'width='150'</td>
             <td>" . $data['name'] . "</td>
-            <td>" . $data['price'] . "</td>
-            <td>" . $data['sup_name'] . "</td>
+            <td>" . $data['age'] . "</td>
+            <td>" . $data['size'] . "</td>
+            <td>" . $data['breed'] . "</td>
             <td><a href='details.php?id=" . $data['id'] . "'>Details</a></td>
             </tr>";
     };
@@ -79,9 +80,9 @@ mysqli_close($connect);
                 <tr>
                     <th>Picture</th>
                     <th>Name</th>
-                    <th>price</th>
-                    <th>supplier</th>
-                    <th>Action</th>
+                    <th>Age</th>
+                    <th>Size</th>
+                    <th>Breed</th>
                 </tr>
             </thead>
             <tbody>
