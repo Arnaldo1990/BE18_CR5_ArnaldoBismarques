@@ -18,12 +18,13 @@ if ($_POST) {
     $name = $_POST['name'];
     $age = $_POST['age'];
     $breed = $_POST['breed'];
+    $vaccine = $_POST['vaccine'];
     $size = $_POST['size'];
     $uploadError = '';
     $description = file_upload($_FILES['description'], "animal");
 
-    $sql = "INSERT INTO `animals`(animal_name, age, breed, size, description) VALUES 
-    ('$name', $age, '$breed', '$size', '$description->fileName')";
+    $sql = "INSERT INTO `animals`(animal_name, age, breed, vaccine, size, description) VALUES 
+    ('$name', $age, '$breed', '$vaccine', '$size', '$description->fileName')";
 
 
     if (mysqli_query($connect, $sql) === true) {
