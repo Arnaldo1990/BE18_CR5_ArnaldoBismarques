@@ -110,6 +110,10 @@ mysqli_close($connect);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <title>Login & Registration System</title>
     <?php require_once 'components/boot.php' ?>
 </head>
@@ -117,7 +121,7 @@ mysqli_close($connect);
 <body>
     <div class="container">
         <form class="w-75" method="post" action="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>" autocomplete="off" enctype="multipart/form-data">
-            <h2 class="text-center">Registration form</h2>
+            <h2 class="animate__animated animate__zoomIn text-center">Registration form</h2>
             <hr />
             <?php
             if (isset($errMSG)) {
@@ -153,9 +157,9 @@ mysqli_close($connect);
                 <input class='form-control w-50' type="file" name="picture">
                 <span class="text-danger"> <?php echo $picError; ?> </span>
             </div>
-            <button type="submit" class="btn btn-block btn-primary btn-lg" name="btn-signup">Sign Up</button>
+            <button type="submit" class="btn btn-block btn-success" name="btn-signup">Sign Up</button>
             <hr />
-            <a href="index.php">New? Sign in Here!</a>
+            <a href='index.php'><button class="badge bg-white text-wrap" style="width: 6rem;" type='button'>New? Sign in Here!</a>
         </form>
     </div>
 </body>
