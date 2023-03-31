@@ -23,12 +23,11 @@ $tbody = '';
 if (mysqli_num_rows($result)  > 0) {
     while ($data = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         $tbody .= "<tr>
-            <td><img class='img-thumbnail' src='pictures/" . $data['picture'] . "'width='150'</td>
-            <td>" . $data['name'] . "</td>
+            <td>" . $data['animal_name'] . "</td>
             <td>" . $data['age'] . "</td>
             <td>" . $data['size'] . "</td>
             <td>" . $data['breed'] . "</td>
-            <td><a href='details.php?id=" . $data['id'] . "'>Details</a></td>
+            <td><a href='details.php?id=" . $data['animalId'] . "'>Details</a></td>
             </tr>";
     };
 } else {
@@ -69,7 +68,6 @@ mysqli_close($connect);
         <table class='table table-striped'>
             <thead class='table-success'>
                 <tr>
-                    <th>Picture</th>
                     <th>Name</th>
                     <th>Age</th>
                     <th>Size</th>
