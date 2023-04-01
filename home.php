@@ -57,6 +57,7 @@ mysqli_close($connect);
             <p class="text-warning"> Username: <?php echo $row['email']; ?></p>
         </div>
         <a class="btn btn-danger position-absolute top-0 end-0" href="logout.php?logout">Sign Out</a>
+        <a class="btn btn-outline-warning" href="senior.php">Senior Pets</a>
 
         <div class="manageProduct w-75 mt-3">
         <div class='mb-3'>
