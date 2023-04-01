@@ -73,13 +73,9 @@ mysqli_close($connect);
 </head>
 
 <body>
-    <nav>
-        <i class="bi bi-house-heart"></i>
-
-    </nav>
 
 <div class="class">
-    <h1 class="text-center">Animal Planet</h1>
+    <h1 class="text-center">Welcome to Adopt a Pet</h1>
 
 </div>
     <div class="container">
