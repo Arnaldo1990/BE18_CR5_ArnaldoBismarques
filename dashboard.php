@@ -70,7 +70,7 @@ mysqli_close($connect);
     <div class="container">
         <div class="row">
             <div class="col-2">
-                <img class="userImage" src="../pictures/avatar.png" alt="Adm avatar">
+                <img class="userImage" src="../pictures/avatar.jpg" alt="Adm avatar">
                 <p class="">Administrator</p>
                 <a class="btn btn-success" href="animals/index.php">Animals</a>
                 <a class="btn btn-danger" href="logout.php?logout">Sign Out</a>
