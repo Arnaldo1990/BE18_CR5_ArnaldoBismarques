@@ -1,5 +1,5 @@
 <?php
 
-$sql = "SELECT * FROM animals WHERE age > '6'";
+$sql = "SELECT * FROM animals WHERE age > '8'";
 
 ?>
