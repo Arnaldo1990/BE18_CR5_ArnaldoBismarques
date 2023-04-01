@@ -55,7 +55,7 @@ mysqli_close($connect);
             <a href="create.php"><button class='btn btn-outline-primary' type="button">Add a Pet</button></a>
             <a class="btn btn-outline-success" href="../senior.php">Senior Pets</a>
             <a href="../dashboard.php"><button class='btn btn-outline-warning' type="button">Dashboard</button></a>
-            <a class="btn btn-danger" href="logout.php?logout">Sign Out</a>
+            <a class="btn btn-danger" href="../logout.php?logout">Sign Out</a>
 
         </div>
         <p class='h2'>Animals</p>
