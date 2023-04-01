@@ -27,7 +27,7 @@ if (mysqli_num_rows($result)  > 0) {
             <td>" . $data['age'] . "</td>
             <td>" . $data['size'] . "</td>
             <td>" . $data['breed'] . "</td>
-            <td><a href='details.php?id=" . $data['animalId'] . "'>Details</a></td>
+            <td><a href='details.php?id=" . $data['animalId'] . "'>More Details</a></td>
             </tr>";
     };
 } else {
@@ -71,6 +71,7 @@ mysqli_close($connect);
                     <th>Age</th>
                     <th>Size</th>
                     <th>Breed</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
