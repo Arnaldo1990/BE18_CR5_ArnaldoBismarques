@@ -32,7 +32,7 @@ mysqli_close($connect);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome - <?php echo $row['first_name']; ?></title>
+    <title>Senior Pets</title>
     <?php require_once 'components/boot.php' ?>
     <style>
         .userImage {
