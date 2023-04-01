@@ -129,7 +129,7 @@ mysqli_close($connect);
 <body>
     <div class="container">
         <form class="w-75" method="post" action="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>" autocomplete="off" enctype="multipart/form-data">
-            <h2 class="animate__animated animate__zoomIn text-center">Registration form</h2>
+            <h2 class="animate__animated animate__zoomIn text-center">Animal Planet Registration Form</h2>
             <hr />
             <?php
             if (isset($errMSG)) {
