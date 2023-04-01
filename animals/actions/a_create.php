@@ -21,7 +21,7 @@ if ($_POST) {
     $vaccine = $_POST['vaccine'];
     $size = $_POST['size'];
     $uploadError = '';
-    $description = file_upload($_FILES['description'], "animal");
+    $description = file_upload($_FILES['description'], "animals");
 
     $sql = "INSERT INTO `animals`(animal_name, age, breed, vaccine, size, description) VALUES 
     ('$name', $age, '$breed', '$vaccine', '$size', '$description->fileName')";
