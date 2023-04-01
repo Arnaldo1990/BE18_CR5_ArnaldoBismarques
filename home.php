@@ -31,7 +31,7 @@ if (mysqli_num_rows($result)  > 0) {
             </tr>";
     };
 } else {
-    $tbody =  "<tr><td colspan='6'><center>No Data Available </center></td></tr>";
+    $tbody =  "<tr><td colspan='5'><center>No Data Available </center></td></tr>";
 }
 
 
