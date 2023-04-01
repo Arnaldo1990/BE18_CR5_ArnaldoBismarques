@@ -53,7 +53,10 @@ mysqli_close($connect);
     <div class="manageProduct w-75 mt-3">
         <div class='mb-3'>
             <a href="create.php"><button class='btn btn-outline-primary' type="button">Add a Pet</button></a>
+            <a class="btn btn-outline-success" href="../senior.php">Senior Pets</a>
             <a href="../index.php"><button class='btn btn-outline-warning' type="button">Dashboard</button></a>
+            <a class="btn btn-outline-danger" href="../home.php">Back to Home</a>
+
         </div>
         <p class='h2'>Animals</p>
         <table class='table table-striped'>
