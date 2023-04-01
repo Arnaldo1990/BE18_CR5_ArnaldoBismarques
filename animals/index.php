@@ -12,20 +12,20 @@ if(isset($_SESSION["user"])){
     header("Location ../home.php");
 }
 
-$email = 'email';
+$Id = 'Id';
 
-$sql = "SELECT id, first_name, password, status FROM users WHERE email = '$email'";
+$sql = "SELECT * FROM animals WHERE 'Id' = '$Id'";
 $result = mysqli_query($connect, $sql);
 $tbody = ''; 
 if (mysqli_num_rows($result)  > 0) {
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         $tbody .= "<tr>
-            <td><img class='img-thumbnail' src='../pictures/" . $row['picture'] . "'</td>
-            <td>" . $row['name'] . "</td>
+            <td><img class='img-thumbnail' src='../pictures/" . $row['description'] . "'</td>
+            <td>" . $row['animal_name'] . "</td>
             <td>" . $row['age'] . "</td>
             <td>" . $row['size'] . "</td>
             <td>" . $row['breed'] . "</td>
-            <a href='delete.php?id=" . $row['id'] . "'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
+            <td><a href='delete.php?id=" . $row['animalId'] . "'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
             </tr>";
     };
 } else {
@@ -64,6 +64,8 @@ mysqli_close($connect);
                     <th>Age</th>
                     <th>Size</th>
                     <th>Breed</th>
+                    <th>Action</th>
+
                 </tr>
             </thead>
             <tbody>
