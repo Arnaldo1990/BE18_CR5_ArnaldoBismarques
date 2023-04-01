@@ -15,10 +15,10 @@ if (isset($_SESSION['user']) != "") {
 
 if ($_POST) {
     $id = $_POST['id'];
-    $picture = $_POST['picture'];
-    ($picture == "animal.jpg") ?: unlink("../../pictures/$picture");
+    $description = $_POST['description'];
+    ($description == "animal.jpg") ?: unlink("../../pictures/$description");
 
-    $sql = "DELETE FROM animals WHERE id = {$id}";
+    $sql = "DELETE FROM animals WHERE animalId = {$id}";
     if (mysqli_query($connect, $sql) === TRUE) {
         $class = "success";
         $message = "Successfully Deleted!";

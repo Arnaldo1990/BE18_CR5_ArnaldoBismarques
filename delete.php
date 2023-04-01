@@ -30,7 +30,7 @@ if ($_GET['id']) {
 if ($_POST) {
     $id = $_POST['id'];
     $picture = $_POST['picture'];
-    ($picture == "avatar.png") ?: unlink("pictures/$picture");
+    ($picture == "avatar.jpg") ?: unlink("pictures/$picture");
 
     $sql = "DELETE FROM users WHERE id = {$id}";
     if ($connect->query($sql) === TRUE) {
