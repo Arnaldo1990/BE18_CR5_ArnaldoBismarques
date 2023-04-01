@@ -47,7 +47,7 @@ mysqli_close($connect);
 </head>
 <body>
     <div class="container">
-        <a class="btn btn-outline-succes" href="home.php" >Home</a>
+    <a class="btn btn-warning position-absolute top-0 end-0" href="home.php">Back to Home</a>
         <div class="manageProduct w-75 mt-3">
             <p class='h2'>Senior Pets</p>
             <table class='table table-striped'>
