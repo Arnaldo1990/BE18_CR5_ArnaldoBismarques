@@ -30,7 +30,7 @@ $row = mysqli_fetch_assoc($result);
 
 <body>
 
- <div class="card" style="width: 18rem;">
+ <div class="card" style="width: 10rem;">
   <img src="pictures/<?= $row['description'] ?>" class="card-img-top" alt="<?= $row["animal_name"] ?>">
   <div class="card-body">
     <h5 class="card-title"><?= $row["animal_name"] ?></h5>
