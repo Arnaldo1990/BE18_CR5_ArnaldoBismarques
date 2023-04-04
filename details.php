@@ -44,6 +44,7 @@ $row = mysqli_fetch_assoc($result);
   <div class="card-body">
     <a class="btn btn-outline-warning" href="home.php">Back to Home</a>
   </div>
+  </div>
 <footer class="bg-dark text-center text-white">
     <div class="container p-4 pb-0">
         <section class="mb-4">
@@ -66,7 +67,6 @@ $row = mysqli_fetch_assoc($result);
         ></a>
         </section>
     </div>
-
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2023 Copyright:
         <p>Arnaldo Bismarques </p>
